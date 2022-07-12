@@ -6,9 +6,9 @@ export interface PageAddListing7Props {}
 const PageAddListing7: FC<PageAddListing7Props> = () => {
   return (
     <CommonLayout
-      index="07"
+      index="06"
       backtHref="/add-listing-6"
-      nextHref="/add-listing-8"
+      nextHref="/add-listing-10"
     >
       <>
         <div>
@@ -18,7 +18,6 @@ const PageAddListing7: FC<PageAddListing7Props> = () => {
             your property.
           </span>
         </div>
-
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         {/* FORM */}
         <div className="space-y-8">

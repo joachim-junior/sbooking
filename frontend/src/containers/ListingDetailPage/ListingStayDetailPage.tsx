@@ -25,23 +25,18 @@ import ModalPhotos from "./ModalPhotos";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
+import image1 from "images/marithon/274176499_1813555455496684_2607867805103293293_n.jpg";
+import image2 from "images/marithon/274224351_1813555528830010_7035530493701792809_n.jpg";
+import image3 from "images/marithon/274215791_1813555555496674_2971933178489539699_n.jpg";
+import image4 from "images/marithon/274288863_1813555498830013_3049371053851820822_n.jpg";
+import image5 from "images/marithon/274352797_1813555192163377_452951247749325138_n.jpg";
 
 export interface ListingStayDetailPageProps {
   className?: string;
   isPreviewMode?: boolean;
 }
 
-const PHOTOS: string[] = [
-  "https://images.pexels.com/photos/6129967/pexels-photo-6129967.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://images.pexels.com/photos/7163619/pexels-photo-7163619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/6527036/pexels-photo-6527036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/6969831/pexels-photo-6969831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/6438752/pexels-photo-6438752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/1320686/pexels-photo-1320686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/261394/pexels-photo-261394.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/2861361/pexels-photo-2861361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/2677398/pexels-photo-2677398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-];
+const PHOTOS: string[] = [image1, image2, image3, image4, image5];
 
 const Amenities_demos = [
   { name: "la-key", icon: "la-key" },
@@ -116,6 +111,7 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
     setOpenFocusIndex(index);
   };
 
+  const [amount, setAmount] = useState(1000);
   const handleCloseModal = () => setIsOpen(false);
 
   const renderSection1 = () => {
@@ -129,59 +125,15 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
 
         {/* 2 */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-          Beach House in Collingwood
+          Marithon hotel
         </h2>
 
         {/* 3 */}
         <div className="flex items-center space-x-4">
-          <StartRating />
-          <span>·</span>
           <span>
             <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
+            <span className="ml-1"> Razel Street, Buea</span>
           </span>
-        </div>
-
-        {/* 4 */}
-        <div className="flex items-center">
-          <Avatar hasChecked sizeClass="h-10 w-10" radius="rounded-full" />
-          <span className="ml-2.5 text-neutral-500 dark:text-neutral-400">
-            Hosted by{" "}
-            <span className="text-neutral-900 dark:text-neutral-200 font-medium">
-              Kevin Francis
-            </span>
-          </span>
-        </div>
-
-        {/* 5 */}
-        <div className="w-full border-b border-neutral-100 dark:border-neutral-700" />
-
-        {/* 6 */}
-        <div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
-          <div className="flex items-center space-x-3 ">
-            <i className=" las la-user text-2xl "></i>
-            <span className="">
-              6 <span className="hidden sm:inline-block">guests</span>
-            </span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <i className=" las la-bed text-2xl"></i>
-            <span className=" ">
-              6 <span className="hidden sm:inline-block">beds</span>
-            </span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <i className=" las la-bath text-2xl"></i>
-            <span className=" ">
-              3 <span className="hidden sm:inline-block">baths</span>
-            </span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <i className=" las la-door-open text-2xl"></i>
-            <span className=" ">
-              2 <span className="hidden sm:inline-block">bedrooms</span>
-            </span>
-          </div>
         </div>
       </div>
     );
@@ -194,21 +146,11 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         <div className="text-neutral-6000 dark:text-neutral-300">
           <span>
-            Providing lake views, The Symphony 9 Tam Coc in Ninh Binh provides
-            accommodation, an outdoor swimming pool, a bar, a shared lounge, a
-            garden and barbecue facilities. Complimentary WiFi is provided.
-          </span>
-          <br />
-          <br />
-          <span>
-            There is a private bathroom with bidet in all units, along with a
-            hairdryer and free toiletries.
-          </span>
-          <br /> <br />
-          <span>
-            The Symphony 9 Tam Coc offers a terrace. Both a bicycle rental
-            service and a car rental service are available at the accommodation,
-            while cycling can be enjoyed nearby.
+            A recent hotel, which prides itself on having 5 stars... On two
+            floors, it offers a bar and a restaurant. Despite a profusion of
+            tiled floors on the ground floor, there are beautiful, clean and
+            functional rooms with flat screen TV and free wi-fi. The quality to
+            price ratio is excellent. Guarded car park and hotel.
           </span>
         </div>
       </div>
@@ -543,7 +485,7 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
         <div>
           <h2 className="text-2xl font-semibold">Location</h2>
           <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            San Diego, CA, United States of America (SAN-San Diego Intl.)
+            Razel street Buea, SW
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
@@ -630,7 +572,7 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
         {/* PRICE */}
         <div className="flex justify-between">
           <span className="text-3xl font-semibold">
-            $119
+            {`FCFA${amount}`}
             <span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
               /night
             </span>
@@ -661,23 +603,24 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
 
         {/* SUM */}
         <div className="flex flex-col space-y-4">
+          <span>Standard room</span>
           <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
-            <span>$119 x 3 night</span>
-            <span>$357</span>
+            <span>FCFA1000 x 1 night</span>
+            <span>FCFA1000</span>
           </div>
           <div className="flex justify-between text-neutral-6000 dark:text-neutral-300">
             <span>Service charge</span>
-            <span>$0</span>
+            <span>FCFA0</span>
           </div>
           <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
           <div className="flex justify-between font-semibold">
             <span>Total</span>
-            <span>$199</span>
+            <span>FCFA1000</span>
           </div>
         </div>
 
         {/* SUBMIT */}
-        <ButtonPrimary>Reserve</ButtonPrimary>
+        <ButtonPrimary href="/checkout">Reserve</ButtonPrimary>
       </div>
     );
   };
@@ -764,10 +707,8 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
           {renderSection1()}
           {renderSection2()}
           {renderSection3()}
-          {renderSection4()}
+
           {renderSectionCheckIndate()}
-          {renderSection5()}
-          {renderSection6()}
           {renderSection7()}
           {renderSection8()}
         </div>
@@ -797,20 +738,6 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
       {/* OTHER SECTION */}
       {!isPreviewMode && (
         <div className="container py-24 lg:py-32">
-          {/* SECTION 1 */}
-          <div className="relative py-16">
-            <BackgroundSection />
-            <SectionSliderNewCategories
-              heading="Explore by types of stays"
-              subHeading="Explore houses based on 10 types of stays"
-              categoryCardType="card5"
-              itemPerRow={5}
-              sliderStyle="style2"
-              uniqueClassName={"ListingStayDetailPage1"}
-            />
-          </div>
-
-          {/* SECTION */}
           <SectionSubscribe2 className="pt-24 lg:pt-32" />
         </div>
       )}

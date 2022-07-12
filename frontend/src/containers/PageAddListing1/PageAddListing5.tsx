@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import Input from "shared/Input/Input";
 import CommonLayout from "./CommonLayout";
+import Textarea from "shared/Textarea/Textarea";
 
 export interface PageAddListing5Props {}
 
@@ -44,7 +45,7 @@ const PageAddListing5: FC<PageAddListing5Props> = () => {
 
   return (
     <CommonLayout
-      index="05"
+      index="04"
       backtHref="/add-listing-4"
       nextHref="/add-listing-6"
     >
@@ -58,74 +59,24 @@ const PageAddListing5: FC<PageAddListing5Props> = () => {
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        {/* FORM */}
-        <div className="space-y-8">
-          {/* ITEM */}
+        <>
           <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              General amenities
-            </label>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {renderRadio("Smoking", "Do", "Do not allow")}
-              {renderRadio("Smoking", "Allow", "Allow", true)}
-              {renderRadio("Smoking", "Charge", "Charge")}
-            </div>
+            <h2 className="text-2xl font-semibold">Hotel policy</h2>
+            <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
+              Mention hotel's policies, like no smoking, no pets, etc.
+            </span>
           </div>
-
-          {/* ITEM */}
+          <Textarea placeholder="..." rows={5} />
+        </>
+        <>
           <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              Pet
-            </label>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {renderRadio("Pet", "Do", "Do not allow")}
-              {renderRadio("Pet", "Allow", "Allow", true)}
-              {renderRadio("Pet", "Charge", "Charge")}
-            </div>
+            <h2 className="text-2xl font-semibold">Special note</h2>
+            <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
+              Add additional information
+            </span>
           </div>
-
-          {/* ITEM */}
-          <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              Party organizing
-            </label>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {renderRadio("Partyorganizing", "Do", "Do not allow")}
-              {renderRadio("Partyorganizing", "Allow", "Allow", true)}
-              {renderRadio("Partyorganizing", "Charge", "Charge")}
-            </div>
-          </div>
-
-          {/* ITEM */}
-          <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              Cooking
-            </label>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {renderRadio("Cooking", "Do", "Do not allow")}
-              {renderRadio("Cooking", "Allow", "Allow", true)}
-              {renderRadio("Cooking", "Charge", "Charge")}
-            </div>
-          </div>
-
-          {/* ----------- */}
-          <div className=" border-b border-neutral-200 dark:border-neutral-700"></div>
-          <span className="block text-lg font-semibold">Additional rules</span>
-          <div className="flow-root">
-            <div className="-my-3 divide-y divide-neutral-100 dark:divide-neutral-800">
-              {renderNoInclude("No smoking in common areas")}
-              {renderNoInclude("Do not wear shoes/shoes in the house")}
-              {renderNoInclude("No cooking in the bedroom")}
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row sm:justify-between space-y-3 sm:space-y-0 sm:space-x-5">
-            <Input className="!h-full" placeholder="No smoking..." />
-            <ButtonPrimary className="flex-shrink-0">
-              <i className="text-xl las la-plus"></i>
-              <span className="ml-3">Add tag</span>
-            </ButtonPrimary>
-          </div>
-        </div>
+          <Textarea placeholder="..." rows={5} />
+        </>
       </>
     </CommonLayout>
   );
